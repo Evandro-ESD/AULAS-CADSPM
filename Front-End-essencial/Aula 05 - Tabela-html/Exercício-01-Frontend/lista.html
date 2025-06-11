@@ -45,6 +45,13 @@
             const textRodaPe = `Rio de janeiro, ${new Date().toLocaleString()}`
             rodape.innerText = textRodaPe
             document.body.appendChild(rodape)
+            // estilizando rodapé
+            // rodape.style.backgroundColor = '#333'
+            rodape.style.paddiing = '10px'
+            rodape.style.fontStyle = 'italic'
+            rodape.style.textAlign = 'left'
+            rodape.style.height = '30px'
+            rodape.style.color = '#333'
         }
         document.addEventListener('DOMContentLoaded', addElemento)
     </script>

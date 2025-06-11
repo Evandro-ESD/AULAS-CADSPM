@@ -1,0 +1,88 @@
+:root {
+    --bordas-color: rgba(0, 0, 255, 0.3);
+    --bordas-color-hover: rgba(0, 0, 255, 0.2);
+    --bordas-color-focus: rgba(0, 0, 255, 1);
+}
+
+header {
+    background-color: cadetblue;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: url('../exercitando-tabela/img/images.png') center/cover no-repeat;
+    opacity: 0.7;
+    /* controle da transparência */
+    z-index: -1;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+th,
+td {
+    padding: 12px 15px;
+    border: 1px solid var(--bordas-color);
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: var(--bordas-color-hover);
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 4px;
+    margin: 10px 0;
+    border: 2px solid var(--bordas-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+fieldset {
+    border: 2px solid var(--bordas-color);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+button[type="submit"],
+button[type="reset"] {
+    background-color: cadetblue;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover,
+button[type="reset"]:hover {
+    background-color: var(--bordas-color-hover);
+}
+
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+}
