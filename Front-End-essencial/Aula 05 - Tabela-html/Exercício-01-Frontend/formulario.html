@@ -1,10 +1,74 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>formulario.html</title>
+    <title>formulario</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: linear-gradient(to right, #01c1fc9a,#017afc8a, #0171fa74);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+        }
+
+        #content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #content label {
+            font-weight: bold;
+        }
+
+        #content label,
+        p,
+        button {
+            margin: 8px 0px 0px 0px;
+            /*top rigth botton left*/
+        }
+
+        #content input,
+        textarea {
+            border-radius: 10px 5px;
+            background: rgb(187, 238, 255);
+        }
+
+        #content input:hover,
+        textarea:hover {
+            background-color:  #cdf2fefe;;
+        }
+
+        button {
+            font-family: cursive;
+            font-size: 14px;
+            width: 10rem;
+            height: 2rem;
+            border-style: none;
+            border-radius: 8px;
+            background-color: rgba(0, 0, 255, 0.5);
+            cursor: pointer;
+        }
+
+        button:hover {
+            font-size: 14.5px;
+            background-color: rgba(0, 0, 255, 0.6);
+        }
+    </style>
 </head>
+
 <body>
     <header>
         <h1>Deixe um comentário</h1>
@@ -13,15 +77,15 @@
         <form action="" onsubmit="enviar(event)">
             <div id="content">
                 <label for="nome">Nome:</label>
-                <input type="text" id="nome" required>
-                
-                <label for="nome">E-mail:</label>
-                <input type="text" id="nome" required>
-                
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
                 <label for="nome">Website:</label>
-                <input type="text" id="nome" required>
-                
-                <label for="">comentário</label>
+                <input type="url" id="website" name="website" required>
+
+                <label for="">Comentário</label>
                 <textarea name="menssagem" id="menssagem" cols="30" rows="10"></textarea>
 
                 <p>Observação: Seu comentário será publicado após passar pelo moderador</p>
@@ -29,6 +93,7 @@
             </div>
         </form>
     </main>
-    
+
 </body>
+
 </html>
