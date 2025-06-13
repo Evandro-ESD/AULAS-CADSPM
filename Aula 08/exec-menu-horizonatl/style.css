@@ -1,0 +1,45 @@
+:root {
+    --cor-fundo: #070707;
+    --cor-texto: antiquewhite;
+    --cor-secao: cadetblue;
+}
+
+header{
+    background-color:var(--cor-fundo);
+    display: flex;
+    flex-direction: row;
+}
+header nav ul li a{
+    color: var(--cor-texto);
+}
+
+header nav ul{
+    display: flex;
+    /* flex-direction: row; */
+    gap: 2rem;
+    text-decoration: none;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
