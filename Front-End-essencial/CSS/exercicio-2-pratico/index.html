@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício Prático</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header id="cabecalho">
+        <h1>Cabeçalho Sticky</h1>
+
+    </header>
+    <section id="menuLateral">
+        <p id="dropdown">Menu</p>
+        <ul class="listaItem">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+
+    </section>
+    <section id="secoes">
+        <div class="secoes">
+            <p>Seçao 1</p>
+
+        </div>
+        <div class="secoes">
+            <p>Seçao 2</p>
+
+        </div>
+        <div class="secoes">
+            <p>Seçao 3</p>
+
+        </div>
+    </section>
+
+    <button id="divBotao">+</button>
+
+    <script>
+        let vermelha = false;
+
+        const botao = document.getElementById('divBotao')
+        botao.addEventListener('click', () => {
+            vermelha = !vermelha
+            botao.style.backgroundColor = vermelha ? '#e74c3c' : 'green'
+            botao.classList.toggle("teste")
+        })
+    </script>
+</body>
+
+</html>

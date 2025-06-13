@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#exer-css {
+    width: 400px;
+    height: 200px;
+    margin: 20px 10px 20px 10px;
+    padding: 30px;
+    border: 4px solid #e74c3c;
+    background: #f39c12;
+    border-radius: 15px;
+}
+
+.inline-element {
+    margin: 10px;
+    padding: 5px;
+    border-bottom: 2px dashed #3498db;
+    /*Borda inferior de 2px tracejada #3498db*/
+    display: inline-block;
+    letter-spacing: 1px;
+    /*espaçamento entre letras*/
+}
+
+span::after {
+    content: '';
+    /* background-color: #e74c3c; */
+    border: 2px solid red;
+}
+
+.reset {
+
+}

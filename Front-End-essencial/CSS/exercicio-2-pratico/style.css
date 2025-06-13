@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#cabecalho {
+    background: #34495e;
+    color: aliceblue;
+    padding: 15px;
+    margin-top: 0px;
+    position: sticky; /*static relative absolute sticky*/
+    width: 100%;
+    text-align: center;
+    z-index: 10000;
+}
+
+#menuLateral {
+    width: 200px;
+    height: 100vh;
+    background: #2c3e50;
+    position: fixed;
+    margin-left: 0px;
+    color: aliceblue;
+    padding: 10px;
+    cursor: pointer;
+    top: 0;
+}
+#menuLateral p{
+    margin-top: 70px;
+}
+#menuLateral ul{
+    padding-top: 10px;
+    padding-left: 30px;
+}
+
+#divBotao {
+    display: flex;
+    background-color: #e74c3c;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    text-align: center;
+    color: antiquewhite;
+    font-size: 24px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    /* border-style: none; */
+    transition: trasnform 1s ease-in;
+
+}
+
+.teste {
+    border-top-color: green;
+    border-right-color: yellow;
+    border-top-color: blue;
+    border-top-color: white;
+    transform: scale(1.1);
+}
+
+span {
+    font-size: 36px;
+    transition: transform 0.5 ease, font-size 0.5s ease;
+    color: aqua;
+}
+
+.secoes {
+    background-color: #cee5fc;
+    width: 100%;
+    height: 500px;
+    position: relative;
+    left: 220px;
+    padding: 10px;
+    margin: 5px 0px 0px 10px;
+}
