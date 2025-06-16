@@ -1,0 +1,10 @@
+Dimensão de pagina em pixel
+
+telas : break point
+
+1920
+1366 - full HD plus
+1280 - full HD
+991  - tablet
+767  - tablet
+480  - mobile até 360

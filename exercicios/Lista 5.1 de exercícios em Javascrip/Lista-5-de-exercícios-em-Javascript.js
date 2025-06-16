@@ -38,10 +38,13 @@ function cem_a_um() {
 // cem_a_um()
 // 3) Desenvolver um programa que apresente os quadrados dos números inteiros de 15 a 200.
 function quadrados() {
-    for (let i = 0; i <= 200; i++) {
-        console.log()
+    let i = 15
+    while(i <= 200) {
+        console.log(`Quadrado ${i}: ${i * i}`)
+        i++
     }
 }
+// quadrados()
 
 // 4) Desenvolver um programa que apresente o valor da soma dos cem primeiros números
 // inteiros (1 + 2 + 3 + 4 + ...+ 97 + 98 + 99 + 100)
@@ -213,7 +216,7 @@ function numeros_reais() {
     }
     pergunta()
 }
-numeros_reais()
+// numeros_reais()
 
 
 
