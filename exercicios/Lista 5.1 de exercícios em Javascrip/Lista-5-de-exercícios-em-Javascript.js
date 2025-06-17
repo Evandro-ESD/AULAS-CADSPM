@@ -80,16 +80,17 @@ tabela = (num) => {
 multiplicaçãoSucessiva = (num) => {
     let produto = 0
 
-    if (num <= 50) {
+    if (num > 0 && num <= 50) {
 
         while (produto <= 250) {
-            produto = + num * 3
+            produto += num * 3
         }
+        console.log(`Resultado final: ${produto}`)
     } else {
         console.log("Informe números entre 0 e 50")
     }
 }
-// multiplicaçãoSucessiva(50)
+multiplicaçãoSucessiva(50)
 
 // 7) Desenvolver um programa que apresente todos os números divisíveis por 4 que sejam
 // menores que 200. Para saber se o número é divisível por 4 será necessário verificar a lógica
