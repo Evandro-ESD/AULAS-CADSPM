@@ -78,16 +78,15 @@ tabela = (num) => {
 // o valor obtido da multiplicação sucessiva de n por 3 enquanto o produto for menor que 250.
 // (n x 3; n x 3 x 3; n x 3 x 3 x 3 etc...).
 multiplicaçãoSucessiva = (num) => {
-    let produto = 0
 
     if (num > 0 && num <= 50) {
 
-        while (produto <= 250) {
-            produto += num * 3
+        while (num * 3 <= 250) {
+            console.log(`${num} x 3 = ${num * 3}`)
+            num *= 3
         }
-        console.log(`Resultado final: ${produto}`)
     } else {
-        console.log("Informe números entre 0 e 50")
+        console.log("Operação inválida, informe números entre 0 e 50")
     }
 }
 multiplicaçãoSucessiva(50)
