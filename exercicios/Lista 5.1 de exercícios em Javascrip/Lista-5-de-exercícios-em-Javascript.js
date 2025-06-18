@@ -89,7 +89,7 @@ multiplicaçãoSucessiva = (num) => {
         console.log("Operação inválida, informe números entre 0 e 50")
     }
 }
-multiplicaçãoSucessiva(50)
+// multiplicaçãoSucessiva(50)
 
 // 7) Desenvolver um programa que apresente todos os números divisíveis por 4 que sejam
 // menores que 200. Para saber se o número é divisível por 4 será necessário verificar a lógica
@@ -144,7 +144,7 @@ soma_valores = () => {
 // 3 elevado à 15 = 14348907
 potencias_de_tres = () => {
     for (let i = 0; i <= 15; i++) {
-        console.log(`${3} elevado à ${i} = ${3 * i}`)
+        console.log(`${3} elevado à ${i} = ${3 ** i}`)
     }
 }
 // potencias_de_tres()

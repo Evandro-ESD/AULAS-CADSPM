@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: monospace;
+            background-color: #f0f0f0;
+        }
+
+        .banner {
+            background: linear-gradient(90deg, #003366, #006699, #009666);
+            color: aliceblue;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            /* Oculta parte do texto*/
+            position: relative;
+        }
+
+        .slogan {
+            font-size: 3rem;
+            font-weight: bold;
+            animation: banner 3s ease forwards;
+            /* animation-iteration-count: infinite; */
+        }
+
+        @keyframes banner {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            100% {
+                /* transform: translateX(200%); */
+                transform: translateX(0);
+                opacity: 0.8;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- banner com texto animado -->
+    <div class="banner">
+        <div class="slogan">
+            Slogan curso ADS PM
+        </div>
+    </div>
+</body>
+
+</html>
