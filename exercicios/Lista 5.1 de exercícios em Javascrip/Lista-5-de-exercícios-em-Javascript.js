@@ -255,5 +255,8 @@ fibonacci = () => {
         fibobacci.push(fibobacci[i - 1] + fibobacci[i - 2])
     }
     console.log(`Série de Fibonacci até o décimo quinto termo: \n`, fibobacci)
+    fibobacci.forEach((valor, index) => {
+        console.log(`${index + 1}º termo = ${valor}`)
+    })
 }
-// fibonacci()
+fibonacci()

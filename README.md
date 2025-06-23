@@ -1,13 +1,16 @@
 "# CADSPM-AULAS" 
 
-AULAS FULL STACK FIRJAN
+#  A U L A S F U L L  S T A C K F I R J A N 
 
-node "Lista 1 de exercícios em Javascript.js"
-node "Lista 2 de exercícios em Javascript.js"
-node "Lista 3 de exercícios em Javascript.js"
-node "Lista 4 de exercícios em Javascript.js"
+✅ node "Lista 1 de exercícios em Javascript.js"
+✅ node "Lista 2 de exercícios em Javascript.js"
+✅ node "Lista 3 de exercícios em Javascript.js"
+✅ node "Lista 4 de exercícios em Javascript.js"
+✅ node "Lista 5.1 de exercícios em Javascript.js"
 
-#   A U L A S - C A D S P M  Front-End Essencial 🚀
+
+#   A U L A S - C A D S P M 
+ Front-End Essencial 🚀
 Repositório dedicado aos exercícios e aulas práticas do curso de Dev Full Stack - conceitos fundamentais de desenvolvimento web.
 
 📁 Estrutura do Repositório
