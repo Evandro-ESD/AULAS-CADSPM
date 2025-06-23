@@ -52,7 +52,7 @@ header {
 
 #sideBar img {
     margin-top: 10px;
-    width: 90%;
+    max-width: 200px;
     height: 5rem;
 }
 
@@ -61,8 +61,12 @@ header {
     padding: 0px 0px 20px 0px;
 }
 
-.card{
+.card {
+    display: flex;
+    justify-content: center;
     box-shadow: 0px 2px 2px #aaaaaa;
+    flex-direction: column;
+    align-items: center;
 }
 
 .cards {
@@ -71,16 +75,18 @@ header {
     gap: 10px;
 }
 
-.card h5 {
+.card h3,
+p {
     text-align: center;
     padding: 5px;
 }
 
 .card img {
-    width: 100%;
+    max-width: 300px;
 }
 
 .card hr {
+    border: none;
     display: block;
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -88,6 +94,7 @@ header {
     margin-right: auto;
     border-style: inset;
     border-width: 1px;
+    width: 100%;
 }
 
 footer {
@@ -100,16 +107,19 @@ footer {
 }
 
 #localizacao {
+    text-align: center;
     grid-column: 1;
     grid-row: 1;
 }
 
 #expediente {
+    text-align: center;
     grid-column: 2;
     grid-row: 1;
 }
 
 #contato {
+    text-align: center;
     grid-column: 3;
     grid-row: 1;
 }
