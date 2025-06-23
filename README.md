@@ -8,12 +8,10 @@ node "Lista 3 de exercícios em Javascript.js"
 node "Lista 4 de exercícios em Javascript.js"
 
 #   A U L A S - C A D S P M  Front-End Essencial 🚀
-Repositório dedicado aos exercícios e aulas práticas do curso de Front-End Essencial, com foco em HTML5, CSS3 e conceitos fundamentais de desenvolvimento web.
+Repositório dedicado aos exercícios e aulas práticas do curso de Dev Full Stack - conceitos fundamentais de desenvolvimento web.
 
 📁 Estrutura do Repositório
-pgsql
-Copiar
-Editar
+
 ├── Aula 01
 ├── Aula 02-21-mai25
 ├── Aula 03
@@ -52,6 +50,9 @@ Introdução a JavaScript (FUNÇÕES DO ARRAY)
 Praticar e desenvolver as habilidades essenciais para construir páginas web modernas e responsivas, aplicando os conceitos ensinados em aula.
 
 🛠️ Tecnologias Utilizadas
+
+JAVASCRIPT
+
 HTML5
 
 CSS3
