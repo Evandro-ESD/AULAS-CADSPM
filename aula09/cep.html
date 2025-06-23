@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucar cep - API Via Cep</title>
+</head>
+
+<body>
+    <label for="cep">CEP </label>
+    <input type="text" id="cep" placeholder="ex.: 22470220">
+
+    <button id="buscar">Buscar CEP</button>
+
+    <div id="resultado" style="margin-top: 20px; height: 20px;"></div>
+
+    <script>
+        document.querySelector('#buscar').addEventListener('click', () => {
+            const cep = document.querySelector('#cep').value.trim();
+
+            if (!cep.match(/^[0-9]{8}$/)) {
+                document.getElementById('resultado').innerHTML = `CEP inválido. Use apenas 8 dígitos!`;
+                return; // impede que o código continue
+            }
+
+            const URL = `https://viacep.com.br/ws/${cep}/json/`;
+
+            fetch(URL)
+                .then(response => response.json())
+                .then(dados => {
+                    if (dados.erro) {
+                        document.getElementById('resultado').innerHTML = 'CEP não encontrado';
+                    } else {
+                        document.getElementById('resultado').innerHTML = `
+                    <p><strong>Rua:    </strong> ${dados.logradouro}</p>
+                    <p><strong>Bairro: </strong> ${dados.bairro}</p>
+                    <p><strong>Cidade: </strong> ${dados.localidade}</p>
+                    <p><strong>Estado: </strong> ${dados.uf}</p>
+                `;
+                    }
+                })
+                .catch(erro => {
+                    document.getElementById('resultado').innerHTML = 'Erro ao buscar o CEP';
+                    console.error(erro);
+                });
+        });
+
+    </script>
+</body>
+
+</html>

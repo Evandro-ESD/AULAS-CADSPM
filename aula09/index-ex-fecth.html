@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo FECTH</title>
+    <style>
+        button {
+            width: 200px;
+            height: 50px;
+            border-radius: 10px;
+            font-size: larger;
+            border-style: hidden;
+            cursor: pointer;
+        }
+
+        button::after {
+            content: '';
+            border: #e66465;
+        }
+
+        button:hover {
+            background: radial-gradient(#e66465, #9198e5);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Postagem de API</h1>
+    <button id="btnBuscar">Clicar!!</button>
+    <div id="resultado"></div>
+    <script>
+        document.querySelector("#btnBuscar").addEventListener('click', () => {
+            const n = Math.floor(Math.random() * 100)
+            const id = n
+            url = `https://jsonplaceholder.typicode.com/posts/${id}`
+            fetch(url)
+                .then(response => response.json())
+                .then(dado => {
+                    console.log(dado)
+                    document.getElementById('resultado').innerHTML =
+                        `
+                            <h2> ${dado.title} </h2>
+                            <p>  ${dado.body}  </p>
+                        `
+                }).catch(error => {
+                    document.getElementById('resultado').innerHTML = "erro: " + error
+                })
+        })
+    </script>
+</body>
+
+</html>
