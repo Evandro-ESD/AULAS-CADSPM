@@ -52,8 +52,8 @@
                         })
                     })
                     /* exclusão da captura do parâmetro html (data-id) */
-                    document.querySelectorAll('.deletar-btn').forEach(() => {
-                        btn.addEventListener('click', (btn) => {
+                    document.querySelectorAll('.deletar-btn').forEach(btn => {
+                        btn.addEventListener('click', (event) => {
                             const id = btn.getAttribute('data-id')
                             deletarpost(id)
                         })
@@ -152,10 +152,10 @@
             bodyInput.value = body;
             editId = id;// marcar que estamos editando-ID
             addBtn.textContent = 'Atualizar';
-            formTitle.textContent = 'Adicionar Post'
+            formTitle.textContent = 'Editar Post'
         }
 
-    </script
+    </script>
 
 </body>
 

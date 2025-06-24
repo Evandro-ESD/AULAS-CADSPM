@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "nome": "João Silva",
+        "idade": 25
+    },
+    {
+        "id": 2,
+        "nome": "Maria Souza",
+        "idade": 30
+    },
+    {
+        "id": 3,
+        "nome": "Carlos Oliveira",
+        "idade": 22
+    },
+    {
+        "id": 4,
+        "nome": "Ana Costa",
+        "idade": 28
+    },
+    {
+        "id": 5,
+        "nome": "Pedro Martins",
+        "idade": 35
+    }
+]

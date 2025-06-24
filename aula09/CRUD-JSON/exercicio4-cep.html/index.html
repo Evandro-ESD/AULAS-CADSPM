@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <main class="'container">
+        <header>
+            <h1>EXERCÍCIO CRUD CEP</h1>
+            <h6><i>2 - Usar uma api Externa do Viacep ou jsonplaceholder. Renderizar a
+                    lista com alguns campos vindo da api externa usando o http - fetch.</h6></i></h6>
+        </header>
+
+        <div id="insercao">
+            <label id="labelCep">Inserir CEP</label>
+            <input type="text" id="input-cep">
+            <button id="btnConsultar">Consultar</button>
+        </div>
+        <div id="resulatdo">
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+
+    </main>
+    <script>
+        //https://viacep.com.br/ws/01001000/json/
+        const CEP = document.querySelector('#input-cep')
+        const btn = document.querySelector('#btnConsultar')
+        const PATH = `https://viacep.com.br/ws/${CEP}/json/`
+
+        function buscarCep(){
+            fetch(PATH).then(res => res.json())
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>C R U D - EXERCÍCIO 3</title>
+</head>
+
+<body>
+    <header>
+        <h1>Exercício C R U D</h1>
+        <h6> <i>lista json com os seguintes campos: id, nome,
+                idade.</i></h6>
+    </header>
+
+    <h2>Escolha uma pessoa</h2>
+
+    <select id="pessoaSelect">
+        <option value="">-- Selecione uma pessoa --</option>
+    </select>
+
+    <button id="adicionarBtn">Adicionar à lista</button>
+
+    <h3>Pessoas Escolhidos:</h3>
+    <textarea id="listaEscolhidos" readonly></textarea>
+
+    <div class="resultado" id="totalPessoas">Total de pessoas</div>
+
+    <script>
+        const select = document.getElementById('pessoaSelect');
+        const lista = document.getElementById('listaEscolhidos');
+        const totalPessoasEl = document.getElementById('totalPessoas');
+
+        let pessoas = [];
+        let totalPessoas = 0;
+
+        fetch('pessoas.json')
+            .then(res => res.json())
+            .then(data => {
+                pessoas = data;
+
+                pessoas.forEach(p => {
+                    const option = document.createElement('option');
+                    option.value = p.id;
+                    option.textContent = `Nome: ${p.nome} - Idade: ${p.idade}`;
+                    select.appendChild(option);
+                });
+            })
+            .catch(error => {
+                alert(`Erro ao carregar a lista!!`);
+            });
+
+        document.getElementById('adicionarBtn').addEventListener('click', () => {
+            const idSelecionado = parseInt(select.value);
+
+            if (isNaN(idSelecionado)) {
+                alert('Selecione uma pessoa válida!');
+                return;
+            }
+
+            const pessoaSelecionada = pessoas.find(p => p.id === idSelecionado);
+
+            if (pessoaSelecionada) {
+                lista.value += `${pessoaSelecionada.nome} - ${pessoaSelecionada.idade} anos\n`;
+                totalPessoas++;
+                totalPessoasEl.textContent = `Total de pessoas escolhidas: ${totalPessoas}`;
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>
