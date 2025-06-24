@@ -19,10 +19,10 @@
         <div id="insercao">
             <label id="labelCep">Inserir CEP</label>
             <input type="text" id="input-cep">
-            <button id="btnConsultar">Consultar</button>
+            <button onclick="buscarCep()" id="btnConsultar">Consultar</button>
         </div>
         <div id="resulatdo">
-            <ul>
+            <ul id="mostrar-resultados">
                 <li></li>
             </ul>
         </div>
@@ -32,10 +32,19 @@
         //https://viacep.com.br/ws/01001000/json/
         const CEP = document.querySelector('#input-cep')
         const btn = document.querySelector('#btnConsultar')
+        const lista = document.querySelector("#mostrar-resultados")
         const PATH = `https://viacep.com.br/ws/${CEP}/json/`
 
         function buscarCep(){
-            fetch(PATH).then(res => res.json())
+            fetch(PATH).then(res => res.json()).then( data => {
+                lista.innerHTML = 
+                `
+                    <li><strong>Rua: </strong>     ${data.logradouro}</li>
+                    <li><strong>Bairro: </strong>  ${data.bairro}</li>
+                    <li><strong>Cidade: </strong>  ${data.localidade}</li>
+                    <li><strong>Estado: </strong>  ${data.uf}</li>
+                `
+            })
         }
 
     </script>
