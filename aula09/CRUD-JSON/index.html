@@ -11,51 +11,151 @@
 <body>
     <h2>Adicionar Post</h2>
     <ul id="postList"></ul>
+
+    <h2 id="formTitulo">Adicinar Posts</h2>
     <input type="text" id="titulo" placeholder="Título">
     <input type="text" id="corpo" placeholder="Conteúdo">
     <button id="addBtn">Adicionar</button>
 
+
     <script>
-        /* 
-        comando usado para instalar o json server: npm install -g json-server
-        comando usado para subir o json-server: json-server --watch db.json --port 8080 
-        */
         const ul = document.getElementById('postList');
         const addBtn = document.getElementById('addBtn');
+        const titleInput = document.getElementById('titulo')
+        const bodyInput = document.getElementById('corpo')
+        const formTitle = document.getElementById('formTitulo')
+
+        let editId = null; //atualização armazena o id do post sendo editado
+
         //função para buscar posts
         function carregarPosts() {
-            fetch('http://localhost:8080/posts')
+            fetch('http://localhost:3001/posts')
                 .then(response => response.json())
                 .then(posts => {
                     ul.innerHTML = '';
                     posts.forEach(posts => {
                         const li = document.createElement('li');
-                        li.innerHTML = ` <strong>${posts.title}</strong><br>${posts.body}`
+                        li.innerHTML = `<strong>${posts.title}</strong><br>${posts.body}<br>
+                        <button class="editar-btn" data-id="${posts.id}" data-title="${encodeURIComponent(posts.title)}" data-body="${encodeURIComponent(posts.body)}">Editar</button>
+                        <button class="deletar-btn" data-id="${encodeURIComponent(posts.id)}">Excluir</button>
+                    
+                    `
                         ul.appendChild(li)
+                    })
+                    //adicionar evento aos botões depois de criar o elemento
+                    document.querySelectorAll('.editar-btn').forEach((btn) => {
+                        btn.addEventListener('click', () => {
+                            const id = btn.getAttribute('data-id')
+                            const title = decodeURIComponent(btn.getAttribute('data-title'))
+                            const body = decodeURIComponent(btn.getAttribute('data-body'))
+                            editarpost(id, title, body)
+                        })
+                    })
+                    /* exclusão da captura do parâmetro html (data-id) */
+                    document.querySelectorAll('.deletar-btn').forEach(() => {
+                        btn.addEventListener('click', (btn) => {
+                            const id = btn.getAttribute('data-id')
+                            deletarpost(id)
+                        })
                     })
                 })
         }
-        carregarPosts();
-        // função para adicinar no posts
-        addBtn.addEventListener('click', () => {
-            const title = document.getElementById('titulo').value
-            const body = document.getElementById('corpo').value
 
-            fetch('http://localhost:8080/posts', {
-                method: 'POST',
-                headers: {
-                    'Content-type': 'aplication/json' /* info. ao servidor que é um formato json*/
-                },
-                body: JSON.stringify({ title, body }) /* o body será o conteúdo qeu seerá enviado a API */
-            })
-            .then(response => response.json())
-            .then(data => {
-                carregarPosts() /*Atualizar lista*/
-                document.getElementById("title").value = ''
-                document.getElementById("corpo").value = ''
-            })
+        carregarPosts();
+
+        //função para adicionar no posts
+        // addBtn.addEventListener('click', () => {
+        //     const title = document.getElementById('titulo').value;
+        //     const body = document.getElementById('corpo').value;
+
+        //     fetch('http://localhost:3001/posts', {
+        //         method: "POST",
+        //         headers: {
+        //             'Content-type': 'application/json'//inf ao servidor que é um formato json
+        //             },
+        //             body: JSON.stringify({ title, body })//O body é que será  enviado para API(string)
+        //     })
+        //     .then(response => response.json())
+        //     .then(data => {  
+        //         carregarPosts();// atualizar a lista
+        //         document.getElementById('titulo').value = '';
+        //         document.getElementById('corpo').value = '';
+        //     })
+        // })
+
+        addBtn.addEventListener('click', () => {//Adicionar e alterar
+            const title = titleInput.value.trim();
+            const body = bodyInput.value.trim();
+            if (!title || !body) return alert('Preencha todos os campos!')
+
+            if (editId) {
+                fetch(`http://localhost:3001/posts/${editId}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-type': 'application/json'
+                    },
+                    body: JSON.stringify({ title, body })
+                })
+                    .then(res => res.json())
+                    .then(() => {
+                        carregarPosts();
+                        resetarFormulario();
+                        alert('post Atualizado com sucesso!!')
+                    })
+            }
+            else {
+                //adicionar post
+                fetch('http://localhost:3001/posts', {
+                    method: "POST",
+                    headers: {
+                        'Content-type': 'application/json'
+                    },
+                    body: JSON.stringify({ title, body })
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        carregarPosts();// atualizar a lista
+                        resetarFormulario()
+                        alert('post adicionado com sucesso!!!!')
+                    })
+
+            }//fim if
+
+
         })
-    </script>
+
+        //limpar formulário
+        function resetarFormulario() {
+            titleInput.value = '';
+            bodyInput.value = '';
+            editId = null;
+            addBtn.textContent = 'adicionar';
+            formTitle.textContent = 'Adicionar Post'
+        }
+
+        // funcão excluir
+        function deletarpost(id) {
+            if (confirm('deseja realmente excluir este Post?')) {
+                fetch(`http://localhost:3001/posts/${id}`, {
+                    method: 'DELETE'
+                })
+                    .then(() => {
+                        carregarPosts();
+                        alert('post excluido com sucesso!!');
+                    })
+            }
+        }
+
+        //atualizar - função para iniciar a edição
+        function editarpost(id, title, body) {
+            titleInput.value = title;
+            bodyInput.value = body;
+            editId = id;// marcar que estamos editando-ID
+            addBtn.textContent = 'Atualizar';
+            formTitle.textContent = 'Adicionar Post'
+        }
+
+    </script
 
 </body>
 

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Domine:wght@400..700&family=WDXL+Lubrifont+JP+N&display=swap"
+        rel="stylesheet">
+    <title>Trabalho Prático: Painel de Controle com API JSON Simulada</title>
+</head>
+
+<body>
+    <main class="container">
+        <header>
+            <div>
+                <div id="pessoas"></div>
+                <h1>Painel de Usuários</h1>
+            </div>
+            <div id="subTitle">
+                <div id="cruz"> <img src="/icons8-soma-48.png" alt="" srcset=""></div>
+                <h2>Adicionar Novo Usuário</h2>
+            </div>
+        </header>
+
+        <div class="content">
+            <div id="entradas">
+                <input type="text" id="nome" name="nome" placeholder="Nome">
+                <input type="number" id="number" name="number" placeholder="Idade">
+                <button id="btnAdicionar">Adicinar</button>
+            </div>
+            <div id="listaUsuarios">
+                <h3>&#128203; Lista de Usuários</h3>
+                <div id="resultado">
+                    <ul id="post-list">
+                        <li>i</li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        const ul = document.querySelector("#post-list")
+        const btnAdicionar = document.querySelector("#btnAdicionar")
+
+        function carregarDados() {
+            fetch('http://localhost:3000/posts')
+                .then(response => response.json())
+                .then(posts => {
+                    ul.innerHTML = '';
+                    posts.forEach(posts => {
+                        const li = document.createElement('li');
+                        li.innerHTML =
+                            ` 
+                            <strong>ID:    </strong>${posts.id}<br>
+                            <strong>Nome:  </strong>${posts.nome}<br>
+                            <strong>Idade: </strong>${posts.idade}
+                        `
+                        ul.appendChild(li)
+                    })
+                })
+        }
+        carregarDados();
+
+        btnAdicionar.addEventListener('click', () => {
+            const title = document.getElementById('titulo').value
+            const body = document.getElementById('corpo').value
+
+            fetch('http://localhost:3000/posts', {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'aplication/json' /* info. ao servidor que é um formato json*/
+                },
+                body: JSON.stringify({ title, body }) /* o body será o conteúdo qeu seerá enviado a API */
+            })
+                .then(response => response.json())
+                .then(data => {
+                    carregarPosts() /*Atualizar lista*/
+                    document.getElementById("title").value = ''
+                    document.getElementById("corpo").value = ''
+                })
+        })
+
+
+    </script>
+</body>
+
+</html>
