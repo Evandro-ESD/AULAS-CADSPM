@@ -42,7 +42,8 @@ header {
     border-radius: 6px;
     text-align: center;
 }
-#requisicao h3{
+
+#requisicao h3 {
     color: #4a90e2;
 }
 
@@ -85,4 +86,28 @@ header {
 
 .cards a:hover {
     color: #d35400;
+}
+
+
+
+@media(max-width: 715px) {
+
+    #resultados {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+    }
+}
+
+@media(max-width: 492px) {
+
+    #resultados {
+        grid-template-columns: repeat(1, minmax(300px, 1fr));
+    }
+
+    #requisicao h3 {
+        text-overflow: ellipsis;
+        font-size: 14px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
 }

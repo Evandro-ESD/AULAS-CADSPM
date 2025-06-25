@@ -41,9 +41,9 @@ async function buscarJSONPlaceholder() {
     } catch (error) {
         console.log('Erro ao carregar os dados', error)
     }
-    finally {
-        console.log('Consulta finalizafda!!!')
-    }
+    // finally {
+    //     console.log('Consulta finalizafda!!!')
+    // }
 
 }
 
