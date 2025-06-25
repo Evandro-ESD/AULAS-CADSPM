@@ -17,10 +17,19 @@ Repositório dedicado aos exercícios e aulas práticas do curso de Dev Full Sta
 ├── Aula 06
 ├── Aula 07
 ├── Aula 08
+├── Aula 09
 ├── Front-End-essencial
 ├── exercicios
 ├── FUNÇÕES DO ARRAY.txt
 └── .vscode
+
+
+📁 Aula 09
+
+    ├── ✅ exercicios de feacth
+    ├── ✅ exercitando verbos GET, POST, PUT, DELETE e PATCH
+    ├── ✅ exerciciops de async - await
+    └── ✅ usando as funções para realizar requisições http a arquivos json e banco de dados
 
 📁 exercicios
 
