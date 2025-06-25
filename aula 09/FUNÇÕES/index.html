@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Funções</title>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <nav>
+                <ul>
+                    <li>UTF-8</li>
+                    <li>UTF-8</li>
+                    <li>UTF-8</li>
+                </ul>
+            </nav>
+        </header>
+        <div id="content">
+            <div id="requisicao">
+
+            </div>
+            <div id="resposta">
+
+            </div>
+        </div>
+
+    </div>
+    <script>
+        function saudacao(nome){
+            return `Olá ${nome}`
+        }
+        const resultado = saudacao("Evandro")
+        console.log(resultado)
+        /*=====================================================*/
+
+        function soma(a, b){
+            return a + b
+        }
+
+        function mostrarResultado(valor){
+            console.log(`Resultado: ${valor}`)
+        }
+
+        let total = soma(5, 3)
+        mostrarResultado(total)
+
+    </script>
+</body>
+</html>

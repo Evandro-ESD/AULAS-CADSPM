@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <main class="'container">
+        <header>
+            <h1>EXERCÍCIO CRUD CEP</h1>
+            <h6><i>2 - Usar uma api Externa do Viacep ou jsonplaceholder. Renderizar a
+                    lista com alguns campos vindo da api externa usando o http - fetch.</h6></i></h6>
+        </header>
+
+        <div id="insercao">
+            <label id="labelCep">Inserir CEP</label>
+            <input type="text" id="input-cep">
+            <button id="btnConsultar">Consultar</button>
+        </div>
+        <div id="resulatdo">
+            <ul id="mostrar-resultados">
+                <li></li>
+            </ul>
+        </div>
+
+    </main>
+    <script>
+        //https://viacep.com.br/ws/01001000/json/
+        const btn = document.querySelector('#btnConsultar')
+        const lista = document.querySelector("#mostrar-resultados")
+
+        function buscarCep() {
+            const input_cep = document.querySelector('#input-cep')
+
+            const cep = input_cep.value.trim()
+
+            const PATH = `https://viacep.com.br/ws/${cep}/json/`
+
+            fetch(PATH)
+                .then(res => res.json())
+                .then(data => {
+                    if (data.erro) {
+                        lista.innerHTML = `<li>CEP não encontrado!</li>`
+                    } else {
+                        lista.innerHTML =
+                            `
+                        <li><strong>Rua: </strong>     ${data.logradouro}</li>
+                        <li><strong>Bairro: </strong>  ${data.bairro}</li>
+                        <li><strong>Cidade: </strong>  ${data.localidade}</li>
+                        <li><strong>Estado: </strong>  ${data.uf}</li>
+                        `
+                    }
+                })
+        }
+        btn.addEventListener('click', buscarCep)
+
+    </script>
+</body>
+
+</html>
