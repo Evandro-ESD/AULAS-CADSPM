@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btnBuscar">Buscar</button>
+    <select id="nomes">
+        <option value="">Selecione...</option>
+    </select>
+    <div id="mostrar-na-tela">
+
+    </div>
+
+    <script>
+        async function buscar() {
+            try {
+
+                const btnBuscar = document.querySelector('btnBuscar')
+                const divMostrar = document.querySelector('mostrar-na-tela')
+                const nomes = document.querySelector('nomes')
+                const listaDeNomes = []
+
+                const resposta = await fetch('https://jsonplaceholder.typicode.com/users')
+
+                const dados = await resposta.json()
+
+                listaDeNomes.push(dados)
+
+                listaDeNomes.slice(1, listaDeNomes.length).forEach(pessoa => {
+                    const option = document.createElement('option')
+                    option.value = pessoa.id
+                    option.textContent = pessoa.nome
+                    nomes.appendChild(option)
+                })
+
+                console.log("======")
+                console.log(typeof listaDeNomes)
+                console.log(listaDeNomes)
+                console.log(typeof dados[0].address.street)
+
+
+            } catch (e) {
+                console.log('Erro: ' + e)
+            }
+
+        }
+        buscar()
+
+    </script>
+</body>
+
+</html>

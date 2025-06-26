@@ -7,7 +7,6 @@ async function buscarJSONPlaceholder() {
 
         if (!resposta.ok) {
             throw new Error(`Erro HTTP: ${resposta.status}`)
-
         }
 
         const consulta = await resposta.json()

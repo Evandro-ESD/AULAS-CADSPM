@@ -28,15 +28,15 @@
 
         <div class="content">
             <div id="entradas">
-                <input type="text" id="nome" name="nome" placeholder="Nome">
-                <input type="number" id="number" name="number" placeholder="Idade">
-                <button id="btnAdicionar">Adicinar</button>
+                <input type="text" id="nome" name="nome" placeholder="Nome" required>
+                <input type="number" id="idade" name="idade" placeholder="Idade" required>
+                <button id="btnAdicionar">Adicionar</button> <!-- pesquisar desabilitar button disabled="true" -->
             </div>
             <div id="listaUsuarios">
                 <h3>&#128203; Lista de Usuários</h3>
                 <div id="resultado">
                     <ul id="post-list">
-                        <li>i</li>
+                        <li>&#128531</li>
 
                     </ul>
                 </div>
@@ -52,13 +52,13 @@
                 .then(response => response.json())
                 .then(posts => {
                     ul.innerHTML = '';
-                    posts.forEach(posts => {
+                    posts.forEach(post => {
                         const li = document.createElement('li');
                         li.innerHTML =
                             ` 
-                            <strong>ID:    </strong>${posts.id}<br>
-                            <strong>Nome:  </strong>${posts.nome}<br>
-                            <strong>Idade: </strong>${posts.idade}
+                            <strong>ID:    </strong>${post.id}<br>
+                            <strong>Nome:  </strong>${post.nome}<br>
+                            <strong>Idade: </strong>${post.idade}
                         `
                         ul.appendChild(li)
                     })
@@ -66,26 +66,42 @@
         }
         carregarDados();
 
-        btnAdicionar.addEventListener('click', () => {
-            const title = document.getElementById('titulo').value
-            const body = document.getElementById('corpo').value
+        function disableBtn() {
+            const nome = document.getElementById('nome').value
+            const idade = document.getElementById('idade').value
+            return { nome, idade }
+        }
 
-            fetch('http://localhost:3000/posts', {
+        console.log(disableBtn(nome, idade))
+
+        btnAdicionar.addEventListener('click', (nome, idade) => {
+            // const objPessoa = disableBtn(nome, idade)
+            disableBtn(nome, idade)
+            // const nome = document.getElementById('nome').value
+            // const idade = document.getElementById('idade').value
+
+            if (disableBtn().nome === '' || disableBtn().idade === 0) {
+                alert(`Dados inválidos!`)
+                return
+            }
+
+            fetch('http://localhost:3000/posts', {   /*npx json-server --watch db.json PARA CARREGAR*/
                 method: 'POST',
                 headers: {
-                    'Content-type': 'aplication/json' /* info. ao servidor que é um formato json*/
+                    'Content-type': 'application/json' /* info. ao servidor que é um formato json*/
                 },
-                body: JSON.stringify({ title, body }) /* o body será o conteúdo qeu seerá enviado a API */
+                body: JSON.stringify({ nome: disableBtn().nome, idade: disableBtn().idade }) /* o body será o conteúdo qeu será enviado a API */
             })
                 .then(response => response.json())
                 .then(data => {
-                    carregarPosts() /*Atualizar lista*/
-                    document.getElementById("title").value = ''
-                    document.getElementById("corpo").value = ''
+                    carregarDados() /*Atualizar lista*/
+                    document.getElementById("nome").value = ''  /* limpa o campo */
+                    document.getElementById("idade").value = '' /* limpa o campo */
+                })
+                .catch(e => {
+                    alert(`&#128531 Erro: ${e}`)
                 })
         })
-
-
     </script>
 </body>
 
