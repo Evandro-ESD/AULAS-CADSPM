@@ -2,43 +2,25 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Calculadora = void 0;
 class Calculadora {
-    // resultado: number
-    constructor(a, b) {
-        this.a = a;
-        this.b = b;
+    constructor() {
     }
-    // dataSet(data: string) {
-    //     this.data = data
-    // }
-    setA(a) {
-        this.a = a;
+    somar(a, b) {
+        return a + b;
     }
-    setB(b) {
-        this.b = b;
+    subtrair(a, b) {
+        return a - b;
     }
-    getA() {
-        return this.a;
+    multiplicar(a, b) {
+        return a * b;
     }
-    getB() {
-        return this.b;
+    dividir(a, b) {
+        return a / b;
     }
-    somar() {
-        return this.a + this.b;
-    }
-    subtrair() {
-        return this.a - this.b;
-    }
-    multiplicar() {
-        return this.a * this.b;
-    }
-    dividir() {
-        return this.a / this.b;
-    }
-    potencia() {
-        return Math.pow(this.a, this.b);
+    potencia(a, b) {
+        return Math.pow(a, b);
     }
     gerarMensagem(operacao, resultado) {
-        return ` O resultado da operação ${operacao} ${this.a} e ${this.b} =  ${resultado}`;
+        return ` O resultado da operação ${operacao} = ${resultado}`;
     }
     exibirMensagem(operacao, resultado) {
         return this.gerarMensagem(operacao, resultado);

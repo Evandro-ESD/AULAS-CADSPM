@@ -1,48 +1,28 @@
 export class Calculadora {
-    a: number
-    b: number
-    // resultado: number
 
-    constructor(a: number, b: number) {
-        this.a = a
-        this.b = b
+    constructor() {
+
     }
 
-    // dataSet(data: string) {
-    //     this.data = data
-    // }
-
-    setA(a: number) {
-        this.a = a
-    }
-    setB(b: number) {
-        this.b = b
-    }
-    getA() {
-        return this.a
-    }
-    getB() {
-        return this.b
+    somar(a:number, b:number) {
+        return a + b
     }
 
-    somar() {
-        return this.a + this.b
+    subtrair(a:number, b:number) {
+        return a - b
     }
-    subtrair() {
-        return this.a - this.b
+    multiplicar(a:number, b:number) {
+        return a * b
     }
-    multiplicar() {
-        return this.a * this.b
+    dividir(a:number, b:number) {
+        return a / b
     }
-    dividir() {
-        return this.a / this.b
-    }
-    potencia() {
-        return Math.pow(this.a, this.b)
+    potencia(a:number, b:number) {
+        return Math.pow(a, b)
     }
 
     gerarMensagem(operacao: string, resultado: number) {
-        return ` O resultado da operação ${operacao} ${this.a} e ${this.b} =  ${resultado}`
+        return ` O resultado da operação ${operacao} = ${resultado}`
     }
     exibirMensagem(operacao: string, resultado: number) {
         return this.gerarMensagem(operacao, resultado)
