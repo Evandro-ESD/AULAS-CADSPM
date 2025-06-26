@@ -1,0 +1,18 @@
+Exercícios:
+Projeto: Controle de Livros
+Tema:
+Modelagem orientada a objetos com TypeScript — atributos, métodos e instâncias
+Contexto:
+Uma pequena biblioteca deseja automatizar o controle dos seus livros e autores. Você foi contratado para criar uma 
+aplicação simples que modele as entidades Livro e Autor, onde cada livro pertence a um autor, e o sistema deve exibir 
+os dados formatados.
+Essa atividade desenvolve a competência de modelar problemas reais usando conceitos de POO em TypeScript, além 
+de visualizar resultados com clareza no console.
+Objetivo:
+Criar duas classes: Autor e Livro. A classe Livro deverá ter uma instância da classe Autor e, ao chamar um método
+(main), deverá imprimir os dados do livro com as informações do autor.
+Competências Desenvolvidas:
+• Identificar e declarar atributos com tipos em TS
+• Criar e utilizar métodos
+• Trabalhar com instância de classe dentro de outra classe (composição)
+• Exibir informações no console de forma clar

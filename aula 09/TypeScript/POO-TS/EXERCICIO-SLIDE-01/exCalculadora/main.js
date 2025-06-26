@@ -1,0 +1,18 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const calculadora_1 = require("./calculadora");
+const somar = new calculadora_1.Calculadora(250, 150);
+const subtrair = new calculadora_1.Calculadora(5, 4);
+const multiplicar = new calculadora_1.Calculadora(5, 4);
+const dividir = new calculadora_1.Calculadora(600, 3);
+const potencia = new calculadora_1.Calculadora(2, 5);
+let resSoma = somar.somar();
+let resSbtracao = somar.subtrair();
+let resMultiplicacao = somar.multiplicar();
+let resDivisao = somar.dividir();
+let resPotencia = somar.potencia();
+console.log(somar.exibirMensagem('soma', resSoma));
+console.log(subtrair.exibirMensagem('subtrair', resSbtracao));
+console.log(multiplicar.exibirMensagem('multiplicar', resMultiplicacao));
+console.log(dividir.exibirMensagem('dividir', resDivisao));
+console.log(potencia.exibirMensagem('potencia', resPotencia));
