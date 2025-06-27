@@ -1,15 +1,15 @@
 import { Calculadora } from "./calculadora";
 
-const somar = new Calculadora()
+const calculadora = new Calculadora()
 
-let resSoma = somar.somar(250,150)
-let resSbtracao = somar.subtrair(250,150)
-let resMultiplicacao = somar.multiplicar(6,6)
-let resDivisao = somar.dividir(600,3)
-let resPotencia = somar.potencia(2,5)
+let resSoma = calculadora.somar(250,150)
+let resSbtracao = calculadora.subtrair(250,150)
+let resMultiplicacao = calculadora.multiplicar(6,6)
+let resDivisao = calculadora.dividir(600,3)
+let resPotencia = calculadora.potencia(2,5)
 
-console.log(somar.exibirMensagem('soma', resSoma))
-console.log(somar.exibirMensagem('subtrair', resSbtracao))
-console.log(somar.exibirMensagem('multiplicar', resMultiplicacao))
-console.log(somar.exibirMensagem('dividir', resDivisao))
-console.log(somar.exibirMensagem('potencia', resPotencia))
+console.log(calculadora.exibirMensagem('soma', resSoma))
+console.log(calculadora.exibirMensagem('subtrair', resSbtracao))
+console.log(calculadora.exibirMensagem('multiplicar', resMultiplicacao))
+console.log(calculadora.exibirMensagem('dividir', resDivisao))
+console.log(calculadora.exibirMensagem('potencia', resPotencia))

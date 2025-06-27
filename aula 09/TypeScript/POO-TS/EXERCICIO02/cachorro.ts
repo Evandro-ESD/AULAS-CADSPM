@@ -1,24 +1,24 @@
-class Cachorro {
-    nome: string
-    cor: string
-    raca: string
-    idade: number
+// class Cachorro {
+//     nome: string
+//     cor: string
+//     raca: string
+//     idade: number
 
 
-    constructor(nome: string, cor: string, raca: string, idade: number) {
-    this.nome = 
-    this.cor:string
-    this.raca:string
-    this.idade:number
+//     constructor(nome: string, cor: string, raca: string, idade: number) {
+//     this.nome = 
+//     this.cor:string
+//     this.raca:string
+//     this.idade:number
 
 
-    }
-    //métodos
-    latir() {
+//     }
+//     //métodos
+//     latir() {
 
-    }
+//     }
 
-    correr() {
+//     correr() {
 
-    }
-}
+//     }
+// }
