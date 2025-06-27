@@ -31,6 +31,34 @@ Repositório dedicado aos exercícios e aulas práticas do curso de Dev Full Sta
     ├── ✅ exerciciops de async - await
     └── ✅ usando as funções para realizar requisições http a arquivos json e banco de dados
 
+
+    📂 Pasta aula — Requisição HTTP (Exercícios Práticos)
+        📝 Descrição: 
+            Esta pasta contém arquivos e exemplos práticos de requisições HTTP utilizando fetch API, simulando consumo de APIs públicas e locais.
+
+        Conteúdo dos Arquivos:
+            <> cep.html	Exemplo de consulta de CEP via API pública, utilizando fetch. Realiza uma busca no serviço ViaCEP e exibe as informações do endereço com base no CEP digitado.
+
+            {} db.json	Arquivo JSON simulando uma base de dados local. Utilizado com ferramentas como JSON Server para criar uma API fake e testar requisições.
+
+            <> index-ex-fetch.html	Exemplo prático de uso do fetch para consumir dados de uma API ou arquivo local. Demonstra como capturar respostas e exibir no HTML.
+
+        ✅ Tecnologias Utilizadas:
+        HTML5
+
+        Fetch API (JavaScript)
+
+        JSON Server (para simulação de API local)
+
+        ⚙️ Instruções:
+        Para testar o db.json, recomenda-se usar o JSON Server:
+
+        bash
+        npm install -g json-server
+        json-server --watch db.json --port 3000
+        Observação:
+        O arquivo cep.html faz chamadas ao https://viacep.com.br, que oferece serviço gratuito de busca de endereços via CEP.
+
 📁 exercicios
 
     ├── ✅ node "Lista 1 de exercícios em Javascript.js"
