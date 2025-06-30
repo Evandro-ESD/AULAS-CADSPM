@@ -11,10 +11,10 @@ class Produtos {
         this.qtd = qtd;
         this.nome = nome;
         this.preco = preco;
-        this.id = 1;
-        this.qtd = 0;
-        this.nome = '';
-        this.preco = 0;
+        // this.id = 1
+        // this.qtd = 0
+        // this.nome = ''
+        // this.preco = 0
     }
     getId() {
         return this.id;
@@ -49,10 +49,10 @@ class Produtos {
     }
     exibirInfos() {
         console.log(`
-        ID:    ${this.id}\n
-        QTD:   ${this.qtd}\n
-        NOME:  ${this.nome}\n
-        PRECO: ${this.preco}
+        ID:    ${this.getId()}\n
+        QTD:   ${this.getQtdItens()}\n
+        NOME:  ${this.getNome()}\n
+        PRECO: ${this.getPreco()}
 
             `);
     }

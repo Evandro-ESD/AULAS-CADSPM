@@ -6,10 +6,10 @@ export class Produtos {
     // preço por item (um valor decimal não negativo)
 
     constructor(private id: number, private qtd: number, private nome: string, private preco: number) {
-        this.id = 1
-        this.qtd = 0
-        this.nome = ''
-        this.preco = 0
+        // this.id = 1
+        // this.qtd = 0
+        // this.nome = ''
+        // this.preco = 0
     }
 
     getId(): number {
@@ -49,10 +49,10 @@ export class Produtos {
     exibirInfos() {
         console.log(
             `
-        ID:    ${this.id}\n
-        QTD:   ${this.qtd}\n
-        NOME:  ${this.nome}\n
-        PRECO: ${this.preco}
+        ID:    ${this.getId()}\n
+        QTD:   ${this.getQtdItens()}\n
+        NOME:  ${this.getNome()}\n
+        PRECO: ${this.getPreco()}
 
             `
         )

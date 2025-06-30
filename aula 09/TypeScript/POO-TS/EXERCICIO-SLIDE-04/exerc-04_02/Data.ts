@@ -7,12 +7,11 @@ export class Data {
 // 
     exibirData(dia: number, mes: number, ano: number) {
 
-        if (dia < 0 || dia > 31 && mes < 0 || mes > 12 && ano < 1990 || ano > 2025) {
+        if (dia < 0 || dia > 31 || mes < 0 || mes > 12 || ano < 1990 || ano > 2025) {
             console.log(`Data invalida!!`)
             return
         } else {
-            return `${this.dia = dia}/${this.mes = mes}/${this.ano = ano}
-            `
+            return `${this.dia = dia}/${this.mes = mes}/${this.ano = ano}`
         }
     }
 }
