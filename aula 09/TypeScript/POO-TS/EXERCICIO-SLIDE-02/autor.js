@@ -1,28 +1,29 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Autor = void 0;
-class Autor {
-    constructor(nome, sobreNome) {
+var Autor = /** @class */ (function () {
+    function Autor(nome, sobreNome) {
         this.nome = nome;
         this.sobreNome = sobreNome;
     }
-    getNome() {
+    Autor.prototype.getNome = function () {
         return this.nome;
-    }
-    setNome(nome) {
+    };
+    Autor.prototype.setNome = function (nome) {
         this.nome = nome;
-    }
-    getSobreNome() {
+    };
+    Autor.prototype.getSobreNome = function () {
         return this.sobreNome;
-    }
-    setSobreNome(sobreNome) {
+    };
+    Autor.prototype.setSobreNome = function (sobreNome) {
         this.sobreNome = sobreNome;
-    }
-    getNomeCompleto() {
+    };
+    Autor.prototype.getNomeCompleto = function () {
         return this.nome + this.sobreNome;
-    }
-    getMenssagem() {
-        return `${this.getNomeCompleto()}`;
-    }
-}
+    };
+    Autor.prototype.getMenssagem = function () {
+        return "".concat(this.getNomeCompleto());
+    };
+    return Autor;
+}());
 exports.Autor = Autor;

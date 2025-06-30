@@ -59,6 +59,33 @@ Repositório dedicado aos exercícios e aulas práticas do curso de Dev Full Sta
         Observação:
         O arquivo cep.html faz chamadas ao https://viacep.com.br, que oferece serviço gratuito de busca de endereços via CEP.
 
+        📁 Exercício simples TypeScript 📚 Projeto Controle de Livros
+
+        Este projeto é uma aplicação simples desenvolvida em **TypeScript**, com foco em conceitos de **Programação Orientada a Objetos (POO)**. 
+
+        ## 🎯 Objetivo
+
+        Modelar as entidades **Livro** e **Autor**, onde:
+        - Cada livro possui um autor associado (composição entre classes).
+        - As informações dos livros e autores são exibidas de forma formatada no console.
+
+        ## 🛠️ Tecnologias Utilizadas
+
+        - **TypeScript** — Linguagem principal do projeto
+        - **Node.js** — Ambiente de execução
+        - **tsc (TypeScript Compiler)** — Para transpilar o código TS para JS
+
+        ## 📦 Estrutura do Projeto
+
+        controle-livros/
+        ├── src/
+        │   ├── Autor.ts      # Classe que representa um autor
+        │   ├── Livro.ts      # Classe que representa um livro e contém uma instância de Autor
+        │   └── index.ts      # Arquivo principal com o método main que exibe os dados
+        ├── tsconfig.json     # Configuração do TypeScript
+        ├── package.json      # Dependências e scripts do projeto
+
+
 📁 exercicios
 
     ├── ✅ node "Lista 1 de exercícios em Javascript.js"

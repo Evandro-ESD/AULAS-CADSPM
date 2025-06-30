@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var cachorro_1 = require("./cachorro");
+var gato_1 = require("./gato");
+var gato = new gato_1.Gato("Félix", 105, 'Angorá', 'preto');
+gato.fazerSom();
+gato.comer();
+console.log('Cor do pelo: ' + gato.getCorPelo());
+var cachorro = new cachorro_1.Cachorro('Spike', 73, 'Bulldogue Inglês', 'cinza');
+cachorro.fazerSom();
+gato.comer();
+console.log('Cor do pelo: ' + cachorro.getCorPelo());

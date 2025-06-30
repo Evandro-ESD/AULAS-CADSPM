@@ -13,9 +13,9 @@ export class Profissao {
 
     getExibirInfosProfissao(): string {
         return `
-            Nome: ${this.matricula}\n
-            Idade: ${this.nomeProfissao}\n
-            RG: ${this.setor}
+            Matricula: ${this.matricula}\n
+            Profissão: ${this.nomeProfissao}\n
+            Setor: ${this.setor}
             `
     }
 }

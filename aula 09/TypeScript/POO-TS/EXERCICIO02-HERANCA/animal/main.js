@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const cachorro_1 = require("./cachorro");
+const gato_1 = require("./gato");
+const gato = new gato_1.Gato("Félix", 105, 'Angorá', 'preto');
+gato.fazerSom();
+gato.comer();
+console.log('Cor do pelo: ' + gato.getCorPelo());
+const cachorro = new cachorro_1.Cachorro('Spike', 73, 'Bulldogue Inglês', 'cinza');
+cachorro.fazerSom();
+gato.comer();
+console.log('Cor do pelo: ' + cachorro.getCorPelo());

@@ -1,19 +1,20 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Livro = void 0;
-class Livro {
-    constructor(titulo, autor) {
+var Livro = /** @class */ (function () {
+    function Livro(titulo, autor) {
         this.titulo = titulo;
         this.autor = autor;
     }
-    getLivro() {
+    Livro.prototype.getLivro = function () {
         return this.titulo;
-    }
-    setLivro(titulo) {
+    };
+    Livro.prototype.setLivro = function (titulo) {
         this.titulo = titulo;
-    }
-    getExibirInformacoes() {
-        return `Titulo: ${this.titulo}\n\tAutor: ${this.autor.getNomeCompleto()}`;
-    }
-}
+    };
+    Livro.prototype.getExibirInformacoes = function () {
+        return "Titulo: ".concat(this.titulo, "\n\tAutor: ").concat(this.autor.getNomeCompleto());
+    };
+    return Livro;
+}());
 exports.Livro = Livro;

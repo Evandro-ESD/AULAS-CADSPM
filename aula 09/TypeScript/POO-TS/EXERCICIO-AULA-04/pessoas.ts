@@ -1,3 +1,5 @@
+import { Profissao } from "./profissao"
+
 export class Pessoas {
     nome: string
     idade: number
@@ -7,13 +9,15 @@ export class Pessoas {
         this.nome = nome
         this.idade = idade
         this.rg = rg
-     }
 
-        getExibirInfos():string{
-            return `
-                Nome: ${this.nome}\n
+    }
+
+    getExibirInfos(): void {
+        console.log(`Nome: ${this.nome}\n
                 Idade: ${this.idade}\n
-                RG: ${this.rg}
-            `
-        }
+                RG: ${this.rg}\n
+            `)
+    }
+
+
 }

@@ -1,44 +1,46 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Carro = void 0;
-class Carro {
+var Carro = /** @class */ (function () {
     //métodos - método construtor
-    constructor(marca, modelo, ano) {
+    function Carro(marca, modelo, ano) {
         this.marca = marca;
         this.modelo = modelo;
         this.ano = ano;
         this.ligado = true;
     }
     //método
-    iserirMarca(marca) {
+    Carro.prototype.iserirMarca = function (marca) {
         this.marca = marca;
-    }
+    };
     // métodos - ações
-    ligar() {
+    Carro.prototype.ligar = function () {
         if (!this.ligado) {
             this.ligado = true;
-            console.log(`${this.modelo} está ligado`);
+            console.log("".concat(this.modelo, " est\u00E1 ligado"));
         }
         else {
-            console.log(`${this.modelo} já está ligado!`);
+            console.log("".concat(this.modelo, " j\u00E1 est\u00E1 ligado!"));
         }
-    }
-    desligar() {
+    };
+    Carro.prototype.desligar = function () {
         if (!this.ligado) {
             this.ligado = false;
-            console.log(`${this.modelo} desligado`);
+            console.log("".concat(this.modelo, " desligado"));
         }
         else {
-            console.log(`${this.modelo} desligado!`);
+            console.log("".concat(this.modelo, " desligado!"));
         }
-    }
-    status() {
-    }
-}
+    };
+    Carro.prototype.status = function () {
+    };
+    return Carro;
+}());
 exports.Carro = Carro;
 new Carro("fiat", "uno", 1990);
-class Manuten {
-    constructor() {
+var Manuten = /** @class */ (function () {
+    function Manuten() {
         this.man = new Carro("fiat", "uno", 1990);
     }
-}
+    return Manuten;
+}());

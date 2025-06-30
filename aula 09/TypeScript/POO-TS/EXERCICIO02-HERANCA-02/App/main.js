@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const Funcionario_1 = require("./Funcionario");
+const Pessoas_1 = require("./Pessoas");
+const func = new Funcionario_1.Funcionario(1, 'Carlos', 818, 912);
+const pessoa = new Pessoas_1.Pessoas(2, 'OutraPessoa', 818);
+func.mostrarString();
+pessoa.mostrarString();
+func.setNome('Chaves');
+func.mostrarString();
