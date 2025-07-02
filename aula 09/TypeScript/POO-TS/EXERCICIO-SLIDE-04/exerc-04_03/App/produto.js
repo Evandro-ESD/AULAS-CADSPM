@@ -11,20 +11,16 @@ class Produtos {
         this.qtd = qtd;
         this.nome = nome;
         this.preco = preco;
-        // this.id = 1
-        // this.qtd = 0
-        // this.nome = ''
-        // this.preco = 0
     }
     getId() {
         return this.id;
     }
     setId(value) {
-        if (this.id <= 1 && this.id > 9999) {
+        if (value >= 1 || value <= 9999) {
             this.id = value;
         }
         else {
-            console.log(`ID: ${this.id} inaválido!!!\n
+            console.log(`ID: ${value} inaválido!!!\n
                 Inseira um número inteiro positivo que varia de 1 até 9999`);
             return;
         }
@@ -33,19 +29,34 @@ class Produtos {
         return this.qtd;
     }
     setQtdItens(value) {
-        this.qtd = value;
+        if (value >= 1) {
+            this.qtd = value;
+        }
+        else {
+            console.log(`Valor inválido!!!`);
+        }
     }
     getNome() {
         return this.nome;
     }
     setNome(value) {
-        this.nome = value;
+        if (value === '') {
+            this.nome = value;
+        }
+        else {
+            console.log(`Valor 'nome' inválido!!!`);
+        }
     }
     getPreco() {
         return this.preco;
     }
     setPreco(value) {
-        this.preco = value;
+        if (value >= 0) {
+            this.preco = value;
+        }
+        else {
+            console.log(`Valor 'preço' inválido!!!`);
+        }
     }
     exibirInfos() {
         console.log(`

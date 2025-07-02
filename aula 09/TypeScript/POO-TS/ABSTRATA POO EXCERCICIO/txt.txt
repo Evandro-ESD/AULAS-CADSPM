@@ -1,0 +1,28 @@
+Você foi contratado para desenvolver uma parte de um sistema de gestão de pessoas para uma 
+empresa. A empresa possui diferentes tipos de funcionários, como Administrativos e 
+Operacionais.
+
+Crie uma classe abstrata chamada Funcionario, com:
+
+Atributos: nome, salarioBase
+
+Método concreto: exibirDados(), que mostra nome e salário base
+
+Método abstrato: calcularSalario()
+
+Crie duas classes que herdam de Funcionario:
+
+FuncionarioAdministrativo
+
+Tem um atributo adicional: bonusMensal
+
+O salário final é salarioBase + bonusMensal
+
+FuncionarioOperacional
+
+Tem um atributo adicional: horasExtras
+
+O salário final é salarioBase + (horasExtras * 20)
+
+Crie uma função que recebe uma lista de funcionários (do tipo Funcionario) e imprime o 
+salário calculado de cada um, usando polimorfismo.

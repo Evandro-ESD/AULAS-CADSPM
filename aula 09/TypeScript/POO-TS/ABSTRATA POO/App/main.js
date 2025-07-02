@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const carros_1 = require("./carros");
+const motos_1 = require("./motos");
+const carro = new carros_1.Carro("Toyota", "Corolla", 2001);
+const moto = new motos_1.Moto("Yamaha", "MT09", 2025);
+console.log(carro.exibirInfos());
+carro.ligar();
+console.log(moto.exibirInfos());
+moto.ligar();
