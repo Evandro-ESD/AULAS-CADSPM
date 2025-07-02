@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const produtos_1 = require("./produtos");
+const servico_1 = require("./servico");
+const servico = new servico_1.ServicoProdutos();
+const produto1 = new produtos_1.Produtos(1, "Teclado", 100);
+const produto2 = new produtos_1.Produtos(2, "Notebook", 3100);
+servico.adicionarProduto(produto1);
+servico.adicionarProduto(produto2);
+servico.listarProduto();
