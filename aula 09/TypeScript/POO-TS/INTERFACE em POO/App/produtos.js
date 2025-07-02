@@ -8,7 +8,7 @@ class Produtos {
         this.preco = preco;
     }
     obterInfos() {
-        return `Id: ${this.id}, Produto: ${this.id}, Preço: ${this.id}`;
+        return `Id: ${this.id}, Produto: ${this.nome}, Preço: ${this.preco}`;
     }
 }
 exports.Produtos = Produtos;

@@ -85,6 +85,17 @@ Repositório dedicado aos exercícios e aulas práticas do curso de Dev Full Sta
         ├── tsconfig.json     # Configuração do TypeScript
         ├── package.json      # Dependências e scripts do projeto
 
+    📁 POO - TYPESCRIPT
+
+        Este repositório contém exercícios e exemplos práticos sobre Programação Orientada a Objetos (POO) em TypeScript, com foco em:
+
+        ✅ Classes Abstratas
+        ✅ Métodos Abstratos
+        ✅ Interfaces
+        ✅ Herança
+        ✅ Polimorfismo
+        ✅ Encapsulamento
+
 
 📁 exercicios
 
